@@ -1,6 +1,6 @@
 # Agenda Barbería
 
-Aplicación frontend académica desarrollada para la Actividad Evaluada 1 de Desarrollo Web y Móvil.
+Aplicación frontend desarrollada para el taller 1 de Desarrollo Web y Móvil.
 
 ## Problemática
 
