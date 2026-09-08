@@ -1,250 +1,519 @@
+/* =====================================================
+   VARIABLES GLOBALES
+   Permiten reutilizar colores en todo el sitio.
+   Si cambia un color aquí, se actualiza en varios lugares.
+   ===================================================== */
+
 :root {
+
   --ink: #162a2c;
+
   --ink-soft: #496063;
+
   --accent: #b97835;
+
   --accent-dark: #8e5725;
+
   --surface: #ffffff;
+
   --surface-soft: #f3f6f3;
+
   --line: #dbe3df;
+
   --success: #237447;
 }
 
+
+/* Hace suave el desplazamiento al utilizar enlaces internos */
 html {
+
   scroll-behavior: smooth;
 }
 
+
+/* Estilos generales de toda la página */
 body {
+
   background: var(--surface);
+
   color: var(--ink);
+
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* =====================================================
+   NAVBAR
+   Personalización de la barra de navegación Bootstrap.
+   ===================================================== */
+
 .navbar-custom {
+
   background: var(--ink);
+
   box-shadow: 0 2px 12px rgba(22, 42, 44, 0.18);
 }
 
+
+/* Pequeño ajuste visual al nombre de la aplicación */
 .navbar-brand {
+
   letter-spacing: 0.2px;
 }
 
+
+/* Color de los enlaces del menú */
 .nav-link {
+
   color: rgba(255, 255, 255, 0.82) !important;
 }
 
+
+/* Cambia el color al pasar el mouse o usar teclado */
 .nav-link:hover,
 .nav-link:focus {
+
   color: #ffffff !important;
 }
 
+
+/* =====================================================
+   HERO
+   Primera sección visible de la aplicación.
+   ===================================================== */
+
 .hero-section {
-  background: linear-gradient(130deg, #e8efe9 0%, #f8f4ee 100%);
+
+  /* Fondo con transición entre dos colores */
+  background:
+    linear-gradient(
+      130deg,
+      #e8efe9 0%,
+      #f8f4ee 100%
+    );
+
   padding: 5.5rem 0;
 }
 
+
+/* Etiquetas pequeñas utilizadas antes de títulos */
 .hero-kicker,
 .section-eyebrow {
+
   color: var(--accent-dark);
+
   font-size: 0.78rem;
+
   font-weight: 700;
+
   letter-spacing: 0.13em;
+
   margin-bottom: 0.55rem;
+
   text-transform: uppercase;
 }
 
+
+/* Título principal responsive */
 .hero-section h1 {
+
+  /*
+    clamp define un mínimo, un valor adaptable
+    y un máximo para el tamaño del texto.
+  */
   font-size: clamp(2.3rem, 5vw, 4.15rem);
+
   font-weight: 800;
+
   line-height: 1.08;
+
   max-width: 680px;
 }
 
+
+/* Texto introductorio del Hero */
 .hero-section .lead {
+
   color: var(--ink-soft);
+
   max-width: 620px;
 }
 
+
+/* Tarjeta secundaria del Hero */
 .hero-card {
+
   background: var(--ink);
+
   border-radius: 1rem;
+
   box-shadow: 0 18px 35px rgba(22, 42, 44, 0.2);
+
   color: #ffffff;
+
   padding: 2.25rem;
 }
 
+
+/* Título dentro de la tarjeta */
 .hero-card h2 {
+
   font-size: 1.35rem;
+
   font-weight: 700;
 }
 
+
+/* Círculo que contiene el icono decorativo */
 .hero-card-icon {
+
   align-items: center;
+
   background: var(--accent);
+
   border-radius: 50%;
+
   display: inline-flex;
+
   font-size: 1.75rem;
+
   height: 3.25rem;
+
   justify-content: center;
+
   margin-bottom: 1.25rem;
+
   width: 3.25rem;
 }
 
+
+/* =====================================================
+   SECCIONES GENERALES
+   ===================================================== */
+
+
+/* Espacio vertical común de las secciones */
 .section-space {
+
   padding: 5rem 0;
 }
 
+
+/* Variante con fondo secundario */
 .section-soft {
+
   background: var(--surface-soft);
 }
 
+
+/* Títulos de cada sección */
 .section-heading h2 {
+
   font-size: clamp(1.9rem, 3vw, 2.55rem);
+
   font-weight: 800;
+
   margin-bottom: 0.6rem;
 }
 
+
+/* Textos secundarios de cada sección */
 .section-heading p:not(.section-eyebrow) {
+
   color: var(--ink-soft);
+
   margin-bottom: 0;
 }
 
+
+/* =====================================================
+   TARJETAS DE SERVICIOS Y RESERVAS
+   ===================================================== */
+
 .service-card,
 .reservation-card {
+
   border: 1px solid var(--line);
+
   border-radius: 0.85rem;
+
   box-shadow: 0 8px 22px rgba(22, 42, 44, 0.06);
+
+  /* Hace que todas las tarjetas llenen el alto disponible */
   height: 100%;
+
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Suaviza los cambios visuales del hover */
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
+
+/* Efecto al pasar el mouse sobre una tarjeta */
 .service-card:hover,
 .reservation-card:hover {
+
   box-shadow: 0 14px 28px rgba(22, 42, 44, 0.12);
+
+  /* Mueve la tarjeta 3 píxeles hacia arriba */
   transform: translateY(-3px);
 }
 
+
+/* Espacio interno de las tarjetas */
 .service-card .card-body,
 .reservation-card .card-body {
+
   padding: 1.5rem;
 }
 
+
+/* Precio de los servicios */
 .service-price {
+
   color: var(--accent-dark);
+
   font-size: 1.3rem;
+
   font-weight: 800;
 }
 
+
+/* Duración de los servicios */
 .service-duration {
+
   color: var(--ink-soft);
+
   font-size: 0.92rem;
 }
 
+
+/* =====================================================
+   FORMULARIO DE RESERVA
+   ===================================================== */
+
+
+/* Contenedor principal del formulario */
 .reservation-panel {
+
   background: var(--surface);
+
   border: 1px solid var(--line);
+
   border-radius: 1rem;
+
   box-shadow: 0 12px 30px rgba(22, 42, 44, 0.08);
+
+  /*
+    padding adaptable.
+    Nunca menor a 1.5rem ni mayor a 3rem.
+  */
   padding: clamp(1.5rem, 4vw, 3rem);
 }
 
+
+/* Estilo visual cuando un input recibe foco */
 .form-control:focus,
 .form-select:focus {
+
   border-color: var(--accent);
-  box-shadow: 0 0 0 0.25rem rgba(185, 120, 53, 0.18);
+
+  box-shadow:
+    0 0 0 0.25rem rgba(185, 120, 53, 0.18);
 }
 
+
+/* Botón principal personalizado */
 .btn-accent {
+
   background: var(--accent);
+
   border-color: var(--accent);
+
   color: #ffffff;
+
   font-weight: 700;
 }
 
+
+/* Estado hover y focus del botón principal */
 .btn-accent:hover,
 .btn-accent:focus {
+
   background: var(--accent-dark);
+
   border-color: var(--accent-dark);
+
   color: #ffffff;
 }
 
+
+/* =====================================================
+   FILTROS Y CONTADORES
+   ===================================================== */
+
+
+/* Define un ancho mínimo para el selector del filtro */
 .filter-box {
+
   min-width: min(100%, 210px);
 }
 
+
+/* Tarjetas con los contadores de reservas */
 .counter-card {
+
   background: var(--ink);
+
   border-radius: 0.75rem;
+
   color: #ffffff;
+
+  /* Flexbox coloca texto y número en lados opuestos */
   display: flex;
+
   justify-content: space-between;
+
   padding: 1rem 1.25rem;
 }
 
+
+/* Texto secundario de los contadores */
 .counter-card span {
+
   color: rgba(255, 255, 255, 0.74);
 }
 
+
+/* Número destacado de cada contador */
 .counter-card strong {
+
   color: #f4c999;
+
   font-size: 1.45rem;
+
   line-height: 1;
 }
 
+
+/* =====================================================
+   INFORMACIÓN DE LAS RESERVAS
+   ===================================================== */
+
 .reservation-meta {
+
   color: var(--ink-soft);
+
   font-size: 0.93rem;
+
+  /* Elimina las viñetas de la lista */
   list-style: none;
+
   margin: 1rem 0;
+
   padding: 0;
 }
 
+
+/* Agrega espacio entre elementos consecutivos */
 .reservation-meta li + li {
+
   margin-top: 0.35rem;
 }
 
+
+/* Etiqueta visual del estado */
 .status-badge {
+
   font-size: 0.78rem;
+
   letter-spacing: 0.03em;
 }
 
+
+/* Estado pendiente */
 .status-pending {
+
   background: #fff1cd;
+
   color: #7a5512;
 }
 
+
+/* Estado confirmado */
 .status-confirmed {
+
   background: #d8f1e1;
+
   color: var(--success);
 }
 
+
+/* =====================================================
+   ESTADO VACÍO
+   Aparece cuando el filtro no encuentra reservas.
+   ===================================================== */
+
 .empty-state {
+
   background: var(--surface-soft);
+
   border: 1px dashed #b9c8c0;
+
   border-radius: 0.8rem;
+
   color: var(--ink-soft);
+
   padding: 2.5rem 1rem;
+
   text-align: center;
 }
 
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
 .footer-custom {
+
   background: var(--ink);
+
   color: rgba(255, 255, 255, 0.75);
+
   font-size: 0.9rem;
+
   padding: 1.3rem 0;
 }
 
+
+/* =====================================================
+   RESPONSIVE
+   Estas reglas se aplican únicamente a pantallas
+   menores o iguales aproximadamente a 768px.
+   ===================================================== */
+
 @media (max-width: 767.98px) {
+
+  /* Reduce los espacios verticales en móviles */
   .hero-section,
   .section-space {
+
     padding: 3.75rem 0;
   }
 
+
+  /* Reduce el padding de la tarjeta Hero */
   .hero-card {
+
     padding: 1.75rem;
   }
 
+
+  /* Reduce el padding del formulario en móvil */
   .reservation-panel {
+
     padding: 1.35rem;
   }
 }
